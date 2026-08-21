@@ -17,7 +17,7 @@ Quá trình thiết kế một CSDL:
 ### 6.	Thiết kế an toàn bảo mật:
 -	Xác định các nhóm người dùng và phân tích vai trò của họ để định nghĩa các phương pháp truy nhập dữ liệu.
 Trong quá trình phát triển, thường có bước cuối cùng (bước thứ 7), gọi là pha điều chỉnh(tuning phase), trong đó CSDL sẽ được thực hiện (mặc dù nó có thể chỉ được chạy mô phỏng) và sẽ được cải tiến, chỉnh sửa để đáp ứng nhu cầu thực thi trong môi trường mong đợi
-![](image/1.png)
+![](Image/1.png)
 ## II. Lược đồ quan hệ E-R (The Entity - Relationship Model)
 - là một công cụ đồ họa được sử dụng để mô hình hóa cấu trúc của một cơ sở dữ liệu.
 -	**Mô hình thực thể liên kết (E-R)** gồm 3 khái niệm cơ bản: **thực thể, tập quan hệ và thuộc tính.**
@@ -26,7 +26,7 @@ Trong quá trình phát triển, thường có bước cuối cùng (bước th�
 - Tập thực thể: Một tập hợp tất cả các thực thể được gọi là một tập hợp thực thể.
 -	Thực thể được biểu diễn bởi một tập các **thuộc tính** (là các thuộc tính mô tả hoặc các đặc tính của thực thể)
 - **Khóa chính** là một thuộc tính có thể xác định duy nhất một thực thể trong một tập thực thể.
- ![](image/15.png)
+ ![](Image/15.png)
 Như trong bảng trên, mỗi học sinh có một số đăng ký duy nhất, bất kì học sinh nào cũng có thể được xác định dựa trên đăng kí số. Enrollment_number là khóa chính trong bảng.
 - Tập thực thể yếu:
      -	Các tập thực thể không có đủ thuộc tính để thiết lập khóa chính được gọi là tập thực thể yếu
@@ -34,7 +34,7 @@ Như trong bảng trên, mỗi học sinh có một số đăng ký duy nhất, 
      -	Các tập thực thể có đủ thuộc tính để thiết lập khóa chính được gọi là tập thực thể mạnh.
 -   Ký hiệu: Hình chữ nhật.
 
- ![](image/16.png)
+ ![](Image/16.png)
 ### 2. Thuộc tính 
 - Mỗi tập thực thể có một tập các tính chất đặc trưng, mỗi tính chất đặc trưng này gọi là thuộc tính của tập thực thể. Ứng với mỗi thuộc tính có một tập các giá trị cho thuộc tính đó gọi là miền giá trị.
 -   Một thuộc tính của một thực thể là một hàm ánh xạ từ một tập thực thể vào một miền giá trị
@@ -52,15 +52,15 @@ Như trong bảng trên, mỗi học sinh có một số đăng ký duy nhất, 
 - **Thuộc tính đa trị:**
     - Được minh họa bằng 2 hình elip lồng nhau, thuộc tính này có thể có nhiều hơn 1 giá trị cho ít nhất một trường hợp thực thể của nó. Thuộc tính này có thể có giới hạn và giới hạn được chỉ định cho bất kì giá trị thực thể riêng lẻ nào.
     - Ví dụ: thuộc tính số điện thoại của một cá nhân có thể có một hoặc nhiều giá trị, một người có thể có một hoặc nhiều số điện thoại. 
-     ![](image/17.png)
+     ![](Image/17.png)
 - Thuộc tính phức hợp:
     - Có thể chứa 2 hoặc nhiều thuộc tính, các thuộc tính này đại diện cho các thuộc tính cơ bản có ý nghĩa độc lập với nhau. 
     - Ví dụ: thuộc tính địa chỉ thường là thuộc tính phức hợp, bao gồm các thuộc tính như đường phố, khu vực,..
-     ![](image/18.png)
+     ![](Image/18.png)
 - Thuộc tính dẫn xuất:
     - Thuộc tính dẫn xuất là thuộc tính mà giá trị của nó hoàn toàn phụ thuộc vào một thuộc tính khác và được biểu thị bằng dấu nét đứt.
     - Ví dụ: thuộc tính tuổi của một người, đối với một người cụ thể, tuổi của một người được xác định từ ngày hiện tại và ngày sinh của người đó.
-     ![](image/19.png)
+     ![](Image/19.png)
 
 Mỗi thực thể đều được phân biệt bởi thuộc tính khóa
 
@@ -75,34 +75,34 @@ Có 3 loại:
 - Mối quan hệ tự thân:
     - Mối quan hệ giữa các thực thể của cùng một tập thực thể được  gọi là mối quan hệ tự thân.
     - Ví dụ: một người quản lý và thành viên nhóm của anh ta. Cả 2 đều thuộc tập thực thể nhân viên.
-     ![](image/8.png)
+     ![](Image/8.png)
 - Mối quan hệ nhị phân:
     - Mối quan hệ tồn tại giữa các thực thể của 2 tập thực thể khác nhau được gọi là mối quan hệ nhị phân.
     - Ví dụ: Một nhân viên thuộc một bộ phân. Mối quan hệ tồn tại giữa 2 thực thể thuộc về 2 tập thực thể khác nhau. Thực thể nhân viên thuộc về thực thể nhân viên. Thực thể bộ phận thuộc về thực thể bộ phân.
-     ![](image/9.png)
+     ![](Image/9.png)
 - Mối quan hệ bậc 3:
     - Các mối quan hệ tồn tại giữa 3 thực thể của các tập thực thể khác nhau được gọi là mối quan hệ bậc 3.
     - Ví dụ: Một nhân viên làm việc trong một bộ phận tài khoản của chi nhánh khu vực. 
-     ![](image/10.png)
+     ![](Image/10.png)
 #### c. Các mối quan hệ cũng có thể được phân loại theo bản đồ ánh xạ. Các bản đồ ánh xạ khác nhau là như sau:
-![](image/3.png)
+![](Image/3.png)
 - 1-1:
     - Tồn tại khi một thực thể của một tập thực thể chỉ có thể được liên kết với một tập thực thể của 1 tập hợp khác.
     - Ví dụ: Mối quan hệ giữa chiếc xe và giấy phép sở hữu chiếc xe. Mỗi phương tiện đều có một đăng ký. Không có 2 phương tiện nào có thể có các chi tiết đăng kí giống nhau. Một xe – Một đăng kí.
-     ![](image/11.png)
+     ![](Image/11.png)
 - 1-N:
     - Tồn tại khi một thực thể của một tập thực có thể được liên kết với nhiều thực thể của một tập thực thể khác.
     - Ví dụ: Mối quan hệ giữa khác hàng và phương tiện di chuyển. Một khách hàng có thể có nhiều hơn một phương tiện di chuyển. Một khách hàng – một hoặc nhiều phương tiện.
-    ![](image/12.png)
+    ![](Image/12.png)
 - N-1:
     - Tồn tại khi nhiều thực thể của một tập hợp được liên kết với một thực thể của tập hợp khác bộ. Sự liên kết này được thực hiện bất kể thực hiện bất kể thực thể sau đã được liên kết với 1 hoặc nhiều thực thể của tập thực thể cũ
     - Ví dụ: mối quan hệ giữa một chiếc xe với nhà sản xuất. Mỗi phương tiện chỉ có 1 công ty sản xuất, nhưng một công ty có thể sản xuất nhiều loại phương tiện.
-     ![](image/13.png)
+     ![](Image/13.png)
 - N-N:
     - Tồn tại khi bất kì số lương thực thể nào của một tập hợp có thể được liên kết với bất kì số thực thể của tập thực thể khác.
     - Ví dụ: mối quan hệ giữa khách hàng của ngân hàng và tài khoản của khách hàng. Một khách hàng có thể có nhiều tài khoản và một tài khoản có thể có nhiều khách hàng được liên kết với nó trong trường hợp đó là tài khoản chung. 
-      ![](image/14.png)
-![](image/2.png)
+      ![](Image/14.png)
+![](Image/2.png)
 
 ## III. Mô hình dữ liệu quan hệ
 - Mô hình Dữ liệu Quan hệ (Relational Data Model – RDM) lần đầu tiên được Ted Codd của IBM phát triển vào những năm 1970
@@ -111,7 +111,7 @@ Có 3 loại:
 •	Mỗi quan hệ có một tập hợp các thuộc tính (tên cột) đại diện cho các tính chất hoặc các đặc trưng của từng thực thể.
 •	Một bộ – tuple (hàng) biểu diễn một thực thể với các các giá trị tương ứng với từng thuộc tính.
 •	Mỗi cột trong bảng còn được gọi là một trường (field)
- ![](image/20.png)
+ ![](Image/20.png)
 - Đặc điểm của mô hình cơ sở dữ liệu quan hệ:
     1.	Mỗi quan hệ trong cơ sở dữ liệu phải có một tên riêng biệt và duy nhất để phân biệt nó với các quan hệ khác trong cơ sở dữ liệu.
     2.	Một quan hệ không được có hai thuộc tính trùng tên. Mỗi thuộc tính phải có một tên riêng biệt.
@@ -142,7 +142,7 @@ Chỉnh sửa để đưa về dạng chuẩn 1NF:
 |         456 | San        | Zhang   | (555) 403-1659 Ext. 53 |
 |         789 | John       | Doe     | 555-808-9633           |
 
-### 2 Dạng chuẩn 2NF (Second Normal Form)
+### 2. Dạng chuẩn 2NF (Second Normal Form)
 Một quan hệ đủ tiêu chí là dạng chuẩn hóa dữ liệu 2NF nếu quan hệ đó:
 - Là 1NF
 - Các thuộc tính không khoá phải phụ thuộc hàm đầy đủ vào khoá chính
