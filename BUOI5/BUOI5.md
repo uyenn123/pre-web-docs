@@ -5,12 +5,14 @@
     - **Hypertext (Siêu văn bản)**: Đây không phải là văn bản thông thường. Nó là dạng văn bản chứa các liên kết `(links)`. Khi bạn nhấp vào một liên kết, bạn sẽ được chuyển đến một trang khác. Hầu hết mọi thứ bạn thấy trên web đều là siêu văn bản.
     - **Protocol (Giao thức)**: Đây là một bộ quy tắc. Giống như luật giao thông giúp các phương tiện di chuyển có trật tự, giao thức giúp các máy tính giao tiếp với nhau một cách thống nhất.
   
--> **HTTP**à bộ quy tắc chuẩn cho phép trình duyệt web của bạn và máy chủ web trao đổi các siêu văn bản. Nó chính là ngôn ngữ chung của Internet.
+-> **HTTP** là bộ quy tắc chuẩn cho phép trình duyệt web của bạn và máy chủ web trao đổi các siêu văn bản. Nó chính là ngôn ngữ chung của Internet.
 ### 2. Cơ chế hoạt động của HTTP
-**HTTP** hoạt động dựa trên mô hình **Client-Server**, nơi trình duyệt của bạn đóng vai trò là client và máy chủ chứa website là Server. Mô hình client-server:
+- **HTTP** hoạt động dựa trên mô hình **Client-Server**, nơi trình duyệt của bạn đóng vai trò là client và máy chủ chứa website là Server. Mô hình client-server:
     - **Client (thường là trình duyệt web)**: Khởi tạo yêu cầu (Request) bằng cách nhập URL (Địa chỉ web) hoặc nhấp vào một liên kết để xin một tài nguyên web (trang HTML, file ảnh, video…).
     - **Server (máy chủ web)**: Là nơi chứa dữ liệu của website. Server lắng nghe, tiếp nhận yêu cầu từ client, xử lý và gửi lại phản hồi (Response) chứa tài nguyên được yêu cầu cùng mã trạng thái.
+  
 ![](image/1.png)
+
 -> Toàn bộ quá trình lướt web của bạn là một chuỗi liên tục các yêu cầu và phản hồi này.
 ### 3. Các method trong HTTP
 - **HTTP** là một giao thức không trạng thái, có nghĩa là mỗi yêu cầu `(request)` từ máy khách đến máy chủ đều độc lập và không lưu giữ thông tin về các yêu cầu trước đó. Để thực hiện các giao dịch qua **HTTP**, chúng ta sử dụng các phương thức `HTTP (HTTP Methods):
@@ -239,10 +241,11 @@ Có nhiều cách để phân loại API, nhưng một trong những cách phổ
 - DI là một design pattern cho phép tách biệt việc tạo đối tượng khỏi việc sử dụng chúng. Thay vì một lớp tự tạo ra các đối tượng phụ thuộc, DI cung cấp các đối tượng này từ bên ngoài, giúp giảm sự phụ thuộc và tăng tính linh hoạt của ứng dụng.
 #### Các Loại Dependency Injection trong Java
 ##### Constructor Injection
-Constructor Injection là phương thức phổ biến nhất trong DI, nơi các phụ thuộc được cung cấp thông qua constructor của lớp. Phương thức này đảm bảo rằng tất cả các phụ thuộc cần thiết được cung cấp ngay khi đối tượng được tạo ra, giúp đảm bảo tính nhất quán và giảm thiểu khả năng xuất hiện trạng thái không hợp lệ.
-**Ví dụ:**
-```
-public class Service {
+- Constructor Injection là phương thức phổ biến nhất trong DI, nơi các phụ thuộc được cung cấp thông qua constructor của lớp. Phương thức này đảm bảo rằng tất cả các phụ thuộc cần thiết được cung cấp ngay khi đối tượng được tạo ra, giúp đảm bảo tính nhất quán và giảm thiểu khả năng xuất hiện trạng thái không hợp lệ.
+- **Ví dụ:**
+
+    ```
+    public class Service {
     private final Repository repository;
 
     public Service(Repository repository) {
@@ -250,16 +253,19 @@ public class Service {
     }
 
     // Các phương thức khác
-}
-```
+    }
+
+    ```
+
 Trong ví dụ trên, lớp Service nhận một đối tượng Repository thông qua constructor, đảm bảo rằng Service luôn có một Repository hợp lệ khi được tạo ra.
 
 ##### Setter Injection
-Setter Injection cung cấp các phụ thuộc thông qua các phương thức setter. Phương thức này cho phép thay đổi các phụ thuộc sau khi đối tượng đã được tạo ra, mang lại tính linh hoạt cao hơn nhưng cũng có thể dẫn đến trạng thái không nhất quán nếu các phụ thuộc không được thiết lập đúng cách.
+- Setter Injection cung cấp các phụ thuộc thông qua các phương thức setter. Phương thức này cho phép thay đổi các phụ thuộc sau khi đối tượng đã được tạo ra, mang lại tính linh hoạt cao hơn nhưng cũng có thể dẫn đến trạng thái không nhất quán nếu các phụ thuộc không được thiết lập đúng cách.
 
-**Ví dụ:**
-```
-public class Service {
+- **Ví dụ:**
+
+    ```
+    public class Service {
     private Repository repository;
 
     public void setRepository(Repository repository) {
@@ -267,22 +273,24 @@ public class Service {
     }
 
     // Các phương thức khác
-}
-```
+    }
+    ```
+
 Trong ví dụ trên, lớp Service cung cấp một phương thức setter để thiết lập Repository sau khi đối tượng đã được tạo ra.
 
 ##### Field Injection
-Field Injection cung cấp các phụ thuộc trực tiếp vào các trường (fields) của lớp, thường thông qua các framework DI như Spring. Phương thức này giúp giảm thiểu mã nguồn nhưng có thể làm giảm tính rõ ràng và khả năng kiểm tra của mã.
+- Field Injection cung cấp các phụ thuộc trực tiếp vào các trường (fields) của lớp, thường thông qua các framework DI như Spring. Phương thức này giúp giảm thiểu mã nguồn nhưng có thể làm giảm tính rõ ràng và khả năng kiểm tra của mã.
 
-**Ví dụ:**
-```
-public class Service {
+- **Ví dụ:**
+    ```
+    public class Service {
     @Autowired
     private Repository repository;
 
     // Các phương thức khác
-}
-```
+    }
+    ```
+
 Trong ví dụ trên, annotation @Autowired của Spring được sử dụng để tự động tiêm Repository vào trường repository của lớp Service.
 
 Mỗi phương thức DI có ưu và nhược điểm riêng, và việc lựa chọn phương thức phù hợp phụ thuộc vào yêu cầu cụ thể của ứng dụng và framework được sử dụng.
